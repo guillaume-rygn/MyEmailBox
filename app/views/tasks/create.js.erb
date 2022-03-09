@@ -1,0 +1,16 @@
+
+if(document.getElementById("Category").value == 4){
+  document.getElementsByClassName("card")[0].firstElementChild.insertAdjacentHTML("beforeend","<%= j render 'task_title', task: @task %>");
+
+} else if (document.getElementById("Category").value == 5){
+  document.getElementsByClassName("card")[1].firstElementChild.insertAdjacentHTML("beforeend","<%= j render 'task_title', task: @task %>");
+
+} else if (document.getElementById("Category").value == 6){
+  document.getElementsByClassName("card")[2].firstElementChild.insertAdjacentHTML("beforeend","<%= j render 'task_title', task: @task %>");
+}
+
+
+
+
+
+
