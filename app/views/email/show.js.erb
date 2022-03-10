@@ -1,0 +1,9 @@
+
+
+document.getElementById("showEmail").innerHTML = "";
+document.getElementById("showEmail").insertAdjacentHTML("afterbegin","<%= j render 'show_email', email: @email %>")
+
+<%=@email.read =! @email.read%>
+
+document.getElementById("object<%=@email.id%>").style.backgroundColor="";
+

@@ -1,0 +1,8 @@
+document.getElementById("object<%=@email.id%>").style.backgroundColor="#f9f9f9";
+
+if (<%=@email.read%> == true){
+  document.getElementById("notRead<%=@email.id%>").textContent = "Marquer comme non-lu"
+  document.getElementById("object<%=@email.id%>").style.backgroundColor="";
+} else {
+    document.getElementById("notRead<%=@email.id%>").textContent = "Marquer comme lu"
+}

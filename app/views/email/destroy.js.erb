@@ -1,0 +1,11 @@
+if (<%=@emails[0].nil?%>){
+  document.getElementById("showEmail").insertAdjacentHTML("afterbegin","");
+}else{
+  document.getElementById("showEmail").insertAdjacentHTML("afterbegin","<%= j render 'show_email', email: @emails.find(@emails[0].id) %>");
+};
+
+document.getElementById("object<%=@email.id%>").remove();
+document.getElementById("email<%=@email.id%>").remove()
+
+
+

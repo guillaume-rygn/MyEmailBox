@@ -1,0 +1,21 @@
+
+<div id="email<%=email.id%>">
+<hr>
+      <table>
+        <tr>
+          <td><strong>Object : </strong></td>
+          <td><%=email.object%></td>
+        </tr>        
+      </table>
+        <hr>
+      <table>
+        <tr>
+          <td style="text-decoration:underline; padding-bottom:15px"><strong>content : </strong></td>
+        </tr>
+        <tr>
+          <td><%=email.body%></td>
+        </tr>        
+      </table>
+      <a class="btn btn-danger" style="position:absolute;bottom:0; margin-bottom:15px" data-method="DELETE" data-remote="true" href="<%=email_path(email.id)%>">Supprimer</a>
+      <a id="notRead<%=email.id%>" class="btn btn-primary" style="position:absolute;bottom:0; margin-left:120px;margin-bottom:15px" data-method="PUT" data-remote="true" href="<%=email_path(email.id)%>">Marquer comme non-lu</a>
+</div>

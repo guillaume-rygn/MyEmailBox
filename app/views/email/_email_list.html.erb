@@ -1,0 +1,80 @@
+<div style="width:90%; margin-left:15px">
+  <div class="row justify-content-center">
+    <div class="col-4 border" style="height:80vh; overflow-y: scroll">
+    <a href="<%=email_index_path%>" data-method="POST" data-remote="true" class="btn btn-primary my-3" id="receive">recevoir un email</a>
+     <p><strong>Liste des emails</strong></p>
+     <hr>
+     <table class="table" >
+      <% @emails.each do |email|%>
+        <% if @emails[0] == email %>
+        
+        <tr id="object<%=email.id%>" class="trdom"><td><a href="<%=email_path(email.id)%>" data-method="GET" data-remote="true" data-params="status=true"><%= email.object%></a></td></tr>
+        <%email.read = !email.read%>
+        <%else%>
+          <%if email.read == false%>
+            <tr id="object<%=email.id%>" style="background-color:  #f9f9f9  " class="trdom"><td><a href="<%=email_path(email.id)%>" data-method="GET" data-remote="true" data-params="status=true"><%= email.object%></a></td></tr>
+          <%else%>
+            <tr id="object<%=email.id%>" class="trdom"><td><a href="<%=email_path(email.id)%>" data-method="GET" data-remote="true" data-params="status=true"><%= email.object%></a></td></tr>
+          <%end%>
+        <%end%>
+      <%end%>
+      </table>
+    </div>
+
+    <div id="showEmail" class="col-8 border" style="position:relative; height:80vh; overflow-y: scroll">
+      <%if @emails[0].nil? == false%>
+        <div id="email<%=@emails[0].id%>">
+          <hr>
+          <table>
+            <tr>
+              <td><strong>Object : </strong></td>
+              <td><%=@emails[0].object%></td>
+            </tr>        
+          </table>
+            <hr>
+          <table>
+            <tr>
+              <td style="text-decoration:underline; padding-bottom:15px"><strong>content : </strong></td>
+            </tr>
+            <tr>
+              <td><%=@emails[0].body%></td>
+            </tr>        
+          </table>
+          <a class="btn btn-danger" style="position:absolute;bottom:0; margin-bottom:15px" data-method="DELETE" data-remote="true" href="<%=email_path(@emails[0].id)%>">Supprimer</a>
+          <a id="notRead<%=@emails[0].id%>" class="btn btn-primary" style="position:absolute;bottom:0; margin-left:120px;margin-bottom:15px" data-method="PUT" data-remote="true" href="<%=email_path(@emails[0].id)%>">Marquer comme non-lu</a>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+
+
+function call(){
+  console.log(document.querySelectorAll("tr.trdom"));
+
+  let a = [];
+  let y = document.querySelectorAll("tr.trdom");
+
+  y.forEach(element => {
+    a.push(element);
+  });
+
+  for (let i = 0; i < a.length; i++) {  
+    a[i].addEventListener("click",function(){
+
+      console.log("bonjour");
+});
+  };
+}
+
+call();
+
+
+
+
+</script>

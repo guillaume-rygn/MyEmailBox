@@ -7,10 +7,6 @@ if(document.getElementById("Category").value == 4){
 
 } else if (document.getElementById("Category").value == 6){
   document.getElementsByClassName("card")[2].firstElementChild.insertAdjacentHTML("beforeend","<%= j render 'task_title', task: @task %>");
-}
+};
 
-
-
-
-
-
+console.log(document.getElementById("Category"));
