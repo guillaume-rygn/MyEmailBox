@@ -48,33 +48,3 @@
   </div>
 </div>
 
-
-
-
-<script>
-
-
-function call(){
-  console.log(document.querySelectorAll("tr.trdom"));
-
-  let a = [];
-  let y = document.querySelectorAll("tr.trdom");
-
-  y.forEach(element => {
-    a.push(element);
-  });
-
-  for (let i = 0; i < a.length; i++) {  
-    a[i].addEventListener("click",function(){
-
-      console.log("bonjour");
-});
-  };
-}
-
-call();
-
-
-
-
-</script>

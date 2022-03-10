@@ -4,4 +4,3 @@ console.log(document.getElementsByTagName("tbody")[0]);
 document.getElementsByTagName("tbody")[0].insertAdjacentHTML("afterbegin","<%= j render 'email_object', email: @email %>");
 document.getElementById("showEmail").innerHTML = "";
 document.getElementById("showEmail").insertAdjacentHTML("afterbegin","<%= j render 'show_email', email: @email %>")
-call();
