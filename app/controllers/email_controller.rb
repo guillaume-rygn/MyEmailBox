@@ -10,7 +10,8 @@ class EmailController < ApplicationController
   
     @email = Email.new(
       'object' => Faker::Book.title,
-      'body' => Faker::Lorem.paragraph
+      'body' => Faker::Lorem.paragraph,
+      'read' => true
     )
 
     @email.save
