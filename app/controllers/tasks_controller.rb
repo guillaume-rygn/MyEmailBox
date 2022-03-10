@@ -9,11 +9,8 @@ before_action :authenticate_user!
         @task = Task.new(task_params)
         @category = Category.find(category_params)
         @task.category = @category
-        if @task.save
-          flash[:notice] = "Task created"
-        else
-          flash[:notice] = "Please try again"
-        end
+        @task.save
+
       
       respond_to do |format|
         format.html { redirect_to root_path }
@@ -32,7 +29,6 @@ before_action :authenticate_user!
     puts params.inspect
     @task = Task.find(params[:id])
     @task.update(task_params)
-    flash[:notice] = "Task edited"
 
     respond_to do |format|
       format.html{ redirect_to tasks_path}

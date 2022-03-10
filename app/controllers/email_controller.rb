@@ -55,9 +55,11 @@ class EmailController < ApplicationController
     @email.update(
       'read' => !@email.read
     )
-    puts "$"*150
-    puts @email.read
 
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
   end
 
 
