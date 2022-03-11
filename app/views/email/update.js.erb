@@ -6,3 +6,5 @@ if (<%=@email.read%> == true){
 } else {
     document.getElementById("notRead<%=@email.id%>").textContent = "Marquer comme lu"
 }
+
+console.log(<%=@email.read%>);

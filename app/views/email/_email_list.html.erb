@@ -49,3 +49,17 @@
   </div>
 </div>
 
+<script>
+
+function touch(){
+  for(let y = 0; y < document.getElementsByClassName("trdom").length; y++){
+    document.getElementsByClassName("trdom")[y].addEventListener("click", function(){
+      document.querySelectorAll(".trdom a")[y].click();
+    });
+  }
+}
+
+touch();
+
+</script>
+
